@@ -4,27 +4,30 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ときのそら２１歳の誕生日プロジェクト   ||  Tokino Sora 21st Birthday Project</title>
+    <title>ときのそら２１歳の誕生日プロジェクト || Tokino Sora 21st Birthday Project</title>
     <meta name="description"
         content="ときのそらの２１歳の誕生日をお祝いするために、全世界のそらともとメッセージとファンアートと「好き、泣いちゃいそうだ」歌ってみた動画を作りました Celebrating Tokino Sora's 21st Birthday, we collected messages and art from around the world, and also made a cover video of 'Suki, Naichaisouda'">
-   
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="og:title" content="ときのそら２１歳の誕生日プロジェクト   ||  Tokino Sora 21st Birthday Project" />
     <meta name="og:description"
         content="ときのそらの２１歳の誕生日をお祝いするために、全世界のそらともとメッセージとファンアートと「好き、泣いちゃいそうだ」歌ってみた動画を作りました Celebrating Tokino Sora's 21st Birthday, we collected messages and art from around the world, and also made a cover video of 'Suki, Naichaisouda'" />
-    {{!-- <meta name="og:image" content="https://skk-tj.github.io/sora-anniversary/img/SORA.png"> --}}
+    {{!--
+    <meta name="og:image" content="https://skk-tj.github.io/sora-anniversary/img/SORA.png"> --}}
 
-    
-    {{!-- <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+
+    {{!--
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="manifest" href="icons/site.webmanifest">
     <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5"> --}}
     <link rel="shortcut icon" href="favicon.ico">
-    {{!-- <meta name="msapplication-TileColor" content="#da532c">
+    {{!--
+    <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff"> --}}
 
@@ -40,6 +43,9 @@
         href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Patrick+Hand&family=Noto+Sans+CJK+JP&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.7.0/simple-lightbox.min.css"
+        integrity="sha512-FHwwMXxhAWjVhJyEgmmPg/aJ3BRmsOavHBV6yMK55Mz0rycBZcRmSowqij+ncd/JPtOzmUMZx7ZIRnGyqIE/1A=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="dist/index.css">
 </head>
 
@@ -51,7 +57,7 @@
     <header id="start-page" class="full-screen-page">
         <div id="start-page-bg" data-aos="fade-down">
         </div>
-        <img src="dist/img/headerText.png" alt="" data-aos="fade-in">
+        <img src="dist/img/headerText.png" alt="" class="title-header-text" data-aos="fade-in">
         <h3 id="start-msg-en">
             Happy Birthday!!
         </h3>
@@ -62,25 +68,44 @@
         </div>
     </header>
 
-    {{!-- <section id="art-sect">
+    <section id="artbook">
         <div class="section-title" data-aos="fade-in">
-            <h1>Art (Click to)</h1>
+            <h1>Art (Click to enlarge)</h1>
             <h3 lang="ja">画集（写真をクリックすると拡大します）</h3>
         </div>
-    </section> --}}
-
-    {{!-- <section id="drawpile-sect">
-        <div class="section-title" data-aos="fade-in">
-            <h1>Drawpile image</h1>
-            <h3 lang="ja">イラスト</h3>
+        <div id="artbook-gallery">
+            {{#each artbook_data}}
+            <a href="{{fullpage}}" data-aos="fade-up">
+                <img class="artbook-page" srcset="{{thumbnail_small}} 150w, {{thumbnail}} 500w"
+                    sizes="(max-width: 700px) 150px, 500px" src="{{thumbnail}}" alt="" />
+                <div style="display: none;" class="art-caption-container">
+                    <div class="art-caption">
+                        <div class="artist-details">
+                            <div class="caption-text">
+                                <!-- htmlmin:ignore -->{{caption_text}}
+                                <!-- htmlmin:ignore -->
+                            </div>
+                            <div class="artist-name">
+                                <div>
+                                    {{artist}}
+                                </div>
+                                {{#if artist_link}}
+                                <div>{{artist_link}}</div>
+                                {{/if}}
+                            </div>
+                        </div>
+                        <div class="artist-nation-flag">
+                            {{#if country_code}}
+                                <span class="flag-icon flag-icon-{{country_code}}" title="{{country_name}}"
+                                    alt="{{country_name}}"></span>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {{/each}}
         </div>
-        <div id="drawpile-image-container" data-aos="fade-in">
-            {{!-- <a href="img/Soras_3rd_Anniversary_Project_Master.jpg" target="_blank">
-                <img id="drawpile-image" src="img/Soras_3rd_Anniversary_Project_Master_compressed.jpg"
-                    alt="Drawpile Result">
-            </a> --}}
-        </div>
-    </section> --}}
+    </section>
 
     {{!-- <section id="cover-mix-sect">
         <div class="section-title" data-aos="fade-in">

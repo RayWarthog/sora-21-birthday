@@ -1,10 +1,17 @@
 window.onload = function () {
-    AOS.init({
-        offset: 120,
-        delay: 50,
-        duration: 1000,
-        mirror: true,
-        once: false,
+    let credits = document.querySelector('#credits');
+    let credits_msnry = new Masonry(credits, {
+        itemSelector: '.credits-section',
+        columnWidth: 300
+    });
+
+    let gallery_a = new SimpleLightbox('#artbook-gallery a', {
+        captionSelector: ".art-caption-container",
+        captionType: "text",
+        captionPosition: "bottom"
+    });
+    gallery_a.on('error.simplelightbox', function (e) {
+        console.log(e); // some usefull information
     });
     
     particlesJS('particles-js', {
@@ -118,16 +125,6 @@ window.onload = function () {
         "retina_detect": true
     });
 
-    let credits = document.querySelector('#credits');
-    let credits_msnry = new Masonry(credits, {
-        itemSelector: '.credits-section',
-        columnWidth: 300
-    });
-
-    credits_msnry.on('layoutComplete', function(){
-        AOS.refresh();
-    });
-
     let paths = document.querySelectorAll('#start-page-svg path');
     let svg_fully_drawn_time = 0;
     let anim_time = 0.1;
@@ -158,6 +155,18 @@ window.onload = function () {
 
     //     svg_fully_drawn_time = anim_time * i;
     // }
+
+    AOS.init({
+        offset: 120,
+        delay: 50,
+        duration: 1000,
+        mirror: true,
+        once: false,
+    });
+
+    credits_msnry.on('layoutComplete', function(){
+        AOS.refresh();
+    });
 
     let en_msg = document.querySelector("#start-msg-en")
     en_msg.style.transitionDelay = svg_fully_drawn_time + 's';
