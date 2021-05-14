@@ -141,10 +141,10 @@ window.onload = function () {
         let navbar = document.querySelector('.navbar');
         if (navbar.classList.contains('active')) {
             navbar.classList.remove('active');
-            this.style.paddingLeft = '5px';
+            this.style.marginLeft = '10px';
         } else {
             navbar.classList.add('active');
-            this.style.paddingLeft = '305px';
+            this.style.marginLeft = '310px';
         }
     });
 
