@@ -1,3 +1,15 @@
+function isScrolledIntoView(el) {
+    var rect = el.getBoundingClientRect();
+    var elemTop = rect.top;
+    var elemBottom = rect.bottom;
+
+    // Only completely visible elements return true:
+    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    // Partially visible elements return true:
+    //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+    return isVisible;
+}
+
 window.onload = function () {
     let credits = document.querySelector('#credits');
     let credits_msnry = new Masonry(credits, {
@@ -190,4 +202,68 @@ window.onload = function () {
     let scroll_hint_show_time = svg_fully_drawn_time + 1;
     scroll_hint.style.transition = scroll_hint.style.WebkitTransition = 'opacity 1s linear ' + scroll_hint_show_time + 's';
     scroll_hint.style.opacity = 1;
+
+    let start_page = document.getElementById('start-page')
+    let timeline_sect = document.getElementById('timeline-sect')
+    let artbook_sect = document.getElementById('artbook')
+    let cover_sect = document.getElementById('cover-mix-sec')
+    let message_sect = document.getElementById('birthday-msgs')
+
+    let start_nav = document.getElementById('navbar-item-start')
+    let timeline_nav = document.getElementById('navbar-item-timeline')
+    let artbook_nav = document.getElementById('navbar-item-artbook')
+    let cover_nav = document.getElementById('navbar-item-cover')
+    let message_nav = document.getElementById('navbar-item-msg')
+
+    document.addEventListener("scroll", function(event) {
+        // if (isScrolledIntoView(start_page)) {
+        //     if (!start_nav.classList.contains('active')) {
+        //         start_nav.classList.add('active')
+        //     }
+        // } else {
+        //     if (start_nav.classList.contains('active')) {
+        //         start_nav.classList.remove('active')
+        //     }
+        // }
+
+        // if (isScrolledIntoView(timeline_sect)) {
+        //     if (!timeline_nav.classList.contains('active')) {
+        //         timeline_nav.classList.add('active')
+        //     }
+        // } else {
+        //     if (timeline_nav.classList.contains('active')) {
+        //         timeline_nav.classList.remove('active')
+        //     }
+        // }
+
+        // if (isScrolledIntoView(artbook_sect)) {
+        //     if (!artbook_nav.classList.contains('active')) {
+        //         artbook_nav.classList.add('active')
+        //     }
+        // } else {
+        //     if (artbook_nav.classList.contains('active')) {
+        //         artbook_nav.classList.remove('active')
+        //     }
+        // }
+
+        // if (isScrolledIntoView(cover_sect)) {
+        //     if (!cover_nav.classList.contains('active')) {
+        //         cover_nav.classList.add('active')
+        //     }
+        // } else {
+        //     if (cover_nav.classList.contains('active')) {
+        //         cover_nav.classList.remove('active')
+        //     }
+        // }
+
+        // if (isScrolledIntoView(message_sect)) {
+        //     if (!message_nav.classList.contains('active')) {
+        //         message_nav.classList.add('active')
+        //     }
+        // } else {
+        //     if (message_nav.classList.contains('active')) {
+        //         message_nav.classList.remove('active')
+        //     }
+        // }
+    });
 };
