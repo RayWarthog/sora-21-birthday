@@ -125,6 +125,8 @@ window.onload = function () {
         "retina_detect": true
     });
 
+    timeline(document.querySelectorAll('.timeline'));
+
     let paths = document.querySelectorAll('#start-page-svg path');
     let svg_fully_drawn_time = 0;
     let anim_time = 0.1;
