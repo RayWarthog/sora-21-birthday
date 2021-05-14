@@ -389,9 +389,9 @@ img.ankimo-img {
     display: block;
 }
 
-.navbar a.active {
+/* .navbar a.active {
     color: #f1f1f1;
-}
+} */
 
 .navbar a:hover {
     color: #f1f1f1;
