@@ -193,6 +193,12 @@ window.onload = function () {
         AOS.refresh();
     });
 
+    document.querySelectorAll('img').forEach(item => {
+        item.addEventListener('load', function(e) {
+            AOS.refresh();
+        });
+    });
+
     let en_msg = document.querySelector("#start-msg-en")
     en_msg.style.transitionDelay = svg_fully_drawn_time + 's';
     en_msg.style.transform = 'translateZ(0)';
