@@ -118,6 +118,16 @@ window.onload = function () {
         "retina_detect": true
     });
 
+    let credits = document.querySelector('#credits');
+    let credits_msnry = new Masonry(credits, {
+        itemSelector: '.credits-section',
+        columnWidth: 300
+    });
+
+    credits_msnry.on('layoutComplete', function(){
+        AOS.refresh();
+    });
+
     let paths = document.querySelectorAll('#start-page-svg path');
     let svg_fully_drawn_time = 0;
     let anim_time = 0.1;

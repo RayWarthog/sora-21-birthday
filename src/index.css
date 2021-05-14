@@ -276,13 +276,8 @@ img.ankimo-img {
     padding: 15px;
 }
 
-#credits .card-columns {
-    column-count: 3;
-    transform: translateZ(0);
-}
-
-#credits .card {
-    background-color: unset;
+#credits .credits-section {
+    padding: 5px;
 }
 
 #credits p {
