@@ -125,6 +125,17 @@ window.onload = function () {
         "retina_detect": true
     });
 
+    document.querySelector('.navbar-icon').addEventListener('click', function(event) {
+        let navbar = document.querySelector('.navbar');
+        if (navbar.classList.contains('active')) {
+            navbar.classList.remove('active');
+            this.style.paddingLeft = '5px';
+        } else {
+            navbar.classList.add('active');
+            this.style.paddingLeft = '305px';
+        }
+    });
+
     timeline(document.querySelectorAll('.timeline'));
 
     let paths = document.querySelectorAll('#start-page-svg path');

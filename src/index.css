@@ -147,7 +147,7 @@ h4 {
 }
 
 .timeline {
-    font-family: 'Architects Daughter',cursive;
+    font-family: 'Architects Daughter', cursive;
     max-width: 1100px;
 }
 
@@ -156,8 +156,8 @@ h4 {
 }
 
 .timeline img {
-    max-width:100%;
-    max-height:100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #cover-mix-player-container {
@@ -350,4 +350,49 @@ img.ankimo-img {
     #credits .card-columns {
         column-count: 4;
     }
+}
+
+.navbar-icon {
+    display: inline-block;
+    font-size: xx-large;
+    color: white;
+    padding: 5px;
+    position: fixed;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 10px;
+    z-index: 999;
+}
+
+.navbar {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    display: none;
+}
+
+.navbar.active {
+    display: block;
+}
+
+.navbar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.navbar a.active {
+    color: #f1f1f1;
+}
+
+.navbar a:hover {
+    color: #f1f1f1;
 }
