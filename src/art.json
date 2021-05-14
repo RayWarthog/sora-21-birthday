@@ -131,5 +131,12 @@
         "artist": "Vanta Realm",
         "country": "Philippines",
         "artist_link": "https://reddit.com/u/VantaRealm"
+    },
+    {
+        "fullpage": "art/SoraBday.png",
+        "caption_text": "",
+        "artist": "@072maegami",
+        "country": "Philippines",
+        "artist_link": "https://twitter.com/072maegami"
     }
 ]
